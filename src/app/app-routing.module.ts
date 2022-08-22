@@ -11,7 +11,6 @@ import { ProfileComponent } from './components/library/profile/profile.component
 import { ReturnbookComponent } from './components/library/returnbook/returnbook.component';
 import { UserborrowbookComponent } from './components/library/userborrowbook/userborrowbook.component';
 import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 

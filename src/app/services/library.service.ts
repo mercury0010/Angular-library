@@ -25,12 +25,8 @@ export class LibraryService {
     return JSON.parse(d);
   }
 
+  getBooks() { return this.http.get(this.books); }
 
-  getBooks() {
-
-    return this.http.get(this.books);
-
-  }
   getProfile() {
 
     return this.http.get(this.profile);
