@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<div class="column" align="center">
+    <div class="col-xl-4 col-sm-6 cursor-pointer" *ngFor="let booksdatas of booksdata">
+        <div class="card h-90">
+            <div class="card-body">
+                <div class="avatar-md me-4">
+                    <span class='card img ' width='150px' height='250px'>
+                        <img src="http://127.0.0.1:8000{{ booksdatas.image }}" class="thumbnail">
+                    </span>
+                </div>
+                <h5 class="font-size-15">{{ booksdatas.title}}</h5>
+                <p class="card-text"><small class="text-muted">by: {{ booksdatas.author}}</small></p>
+                <p class="card-text"><small class="text-muted">Owner: {{ booksdatas.authorname}}</small></p>
+                <p class="card-text"><small class="text-muted">Status: {{ booksdatas.status}}</small>
+
+                </p>
+                <p class="card-text">Description: <br>{{ booksdatas.plot}}</p>
+                <input type="button" [hidden]="isSubmitBtnDisabled" class="btn btn-info " value="  Borrow  "
+                    data-toggle="modal" data-backdrop="static" data-keyboard="false" (click)="openPopup()" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document" *ngFor="let booksdatas of booksdata">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Borrow</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>Please Input return date for borrowing<b>{{booksdatas.title}}</b></p>
+                <form [formGroup]="borrowBookForm" (ngSubmit)="userBorrow(borrowBookForm)" autocomplete="off" required>
+                    <input min="{{this.date}}" type="date" formControlName="returnedDate" class="form-control">
+                    <button type="submit" class="btn btn-info" (click)="bookStatus()">
+                        Borrow
+                    </button>
+                    <button type="button" class="btn btn-danger" (click)="closePopup()">
+                        Close
+                    </button>
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

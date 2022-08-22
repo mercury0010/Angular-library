@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+
+
+<div class="col-xs-1" align="center">
+    <br><br><br><br> <br>
+    <form [formGroup]="editBookForm" (ngSubmit)="EditUserBook(editBookForm)" autocomplete="off"
+        *ngFor="let booksdatas of booksdata">
+        <h2>Edit Book
+        </h2>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td><label>Title:{{ booksdatas.title }} </label><input type="text" [(ngModel)]="booksdatas.title"
+                            formControlName="title" class="form-control" />
+                        <div *ngIf="(f['title'].touched) && (f['title'].invalid)">
+                            <div *ngIf="f['title'].errors && f['title'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Author:{{ booksdatas.author }}</label> <input type=" text"
+                            [(ngModel)]="booksdatas.author" formControlName="author" class="form-control" />
+                        <div *ngIf="(f['author'].touched) && (f['author'].invalid)">
+                            <div *ngIf="f['author'].errors && f['author'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="hidden" formControlName="status" class="form-control"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Location:{{ booksdatas.location }}</label>
+
+                        <br>
+                        <select class="form-select" formControlName="location" [(ngModel)]="booksdatas.location">
+                            <option value="1st Floor">1st Floor</option>
+                            <option value="2nd Floor">2nd Floor</option>
+                            <option value="3rd Floor">3rd Floor</option>
+                            <option value="4th Floor">4th Floor</option>
+                        </select>
+                        <div *ngIf="(f['location'].touched) && (f['location'].invalid)">
+                            <div *ngIf="f['location'].errors && f['location'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Type:{{ booksdatas.type }}</label>
+                        <br>
+                        <select class="form-select" formControlName="type" [(ngModel)]="booksdatas.type">
+                            <option value="Soft Copy">Soft Copy</option>
+                            <option value="Hard Copy">Hard Copy</option>
+                        </select>
+                        <div *ngIf="(f['type'].touched) && (f['type'].invalid)">
+                            <div *ngIf="f['type'].errors && f['type'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Description</label><textarea type="file" formControlName="plot"
+                            [(ngModel)]="booksdatas.plot" class="form-control"></textarea>
+                        <div *ngIf="(f['plot'].touched) && (f['plot'].invalid)">
+                            <div *ngIf="f['plot'].errors && f['plot'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="loginButton" type="submit" class="btn btn-info " value="  Edit Book  "
+                            name="submit" /><br><br>
+
+
+                    </td>
+
+
+            </tbody>
+        </table>
+    </form>
+</div>

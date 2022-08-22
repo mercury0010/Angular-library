@@ -1,0 +1,45 @@
+<div class="col-xs-1" align="center">
+    <br><br><br><br> <br>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)" autocomplete="off">
+        <h2>Login
+        </h2>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td><label>Email</label><input type="text" formControlName="username" class="form-control" />
+                        <div *ngIf="(f['username'].touched) && (f['username'].invalid)">
+                            <div *ngIf="f['username'].errors && f['username'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>password</label> <input type="password" formControlName="password"
+                            class="form-control" />
+                        <div *ngIf="(f['password'].touched) && (f['password'].invalid)">
+                            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">
+                        <input id="loginButton" type="submit" class="btn btn-info " value="  Login  "
+                            name="submit" /><br><br>
+                        <input id="registerButton" type="submit" class="btn btn-info " value="Register" name="submit"
+                            routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" /><br><br>
+
+                    </td>
+
+
+            </tbody>
+        </table>
+    </form>
+</div>

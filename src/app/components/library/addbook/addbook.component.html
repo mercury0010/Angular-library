@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+<div class="col-xs-1" align="center">
+    <br><br><br><br> <br>
+    <form [formGroup]="addBookForm" (ngSubmit)="addUserBook(addBookForm)" autocomplete="off">
+        <h2>Add Book
+        </h2>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td><label>Title</label><input type="text" formControlName="title" class="form-control" />
+                        <div *ngIf="(f['title'].touched) && (f['title'].invalid)">
+                            <div *ngIf="f['title'].errors && f['title'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Author</label> <input type="text" formControlName="author" class="form-control" />
+                        <div *ngIf="(f['author'].touched) && (f['author'].invalid)">
+                            <div *ngIf="f['author'].errors && f['author'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="hidden" formControlName="status" class="form-control" />
+                        <div *ngIf="(f['status'].touched) && (f['status'].invalid)">
+                            <div *ngIf="f['status'].errors && f['status'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Location</label>
+                        <br>
+                        <select class="form-select" formControlName="location">
+                            <option value="1st Floor">1st Floor</option>
+                            <option value="2nd Floor">2nd Floor</option>
+                            <option value="3rd Floor">3rd Floor</option>
+                            <option value="4th Floor">4th Floor</option>
+                        </select>
+                        <div *ngIf="(f['location'].touched) && (f['location'].invalid)">
+                            <div *ngIf="f['location'].errors && f['location'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Type</label>
+                        <br>
+                        <select class="form-select" formControlName="type">
+                            <option value="Soft Copy">Soft Copy</option>
+                            <option value="Hard Copy">Hard Copy</option>
+                        </select>
+                        <div *ngIf="(f['type'].touched) && (f['type'].invalid)">
+                            <div *ngIf="f['type'].errors && f['type'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Thumbnail</label>
+                        <br>
+                        <input type="file" formControlName="image" class="form-control"
+                            (change)="onSelectFiled($event)" />
+                        <div *ngIf="(f['image'].touched) && (f['image'].invalid)">
+                            <div *ngIf="f['image'].errors && f['image'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Description</label><textarea type="file" formControlName="plot"
+                            class="form-control"></textarea>
+                        <div *ngIf="(f['plot'].touched) && (f['plot'].invalid)">
+                            <div *ngIf="f['plot'].errors && f['plot'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <input id="loginButton" type="submit" class="btn btn-info " value="  Add Book  "
+                            name="submit" /><br><br>
+
+                    </td>
+
+
+            </tbody>
+        </table>
+    </form>
+</div>

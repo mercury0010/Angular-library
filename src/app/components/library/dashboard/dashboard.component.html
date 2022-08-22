@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<div class="row" align="center">
+    <div class="col-xl-4 col-sm-6 cursor-pointer" *ngFor="let book of books">
+        <div class="card h-90">
+            <div class="card-body">
+                <div class="avatar-md me-4">
+                    <span class='card img ' width='150px' height='250px'>
+                        <img src="http://127.0.0.1:8000{{ book.image }}" class="thumbnail">
+                    </span>
+                </div>
+                <h5 class="font-size-15">{{ book.title}}</h5>
+                <p class="card-text"><small class="text-muted">by: {{ book.author}}</small></p>
+                <p class="card-text"><small class="text-muted">Owner: {{ book.authorname}}</small></p>
+                <input type="button" class="btn btn-info " value="Show more"
+                    routerLink="BorrowBook/{{ book.id }}/{{ book.status }}" routerLinkActive="active"
+                    ariaCurrentWhenActive="page" name="" />
+            </div>
+        </div>
+    </div>
+</div>

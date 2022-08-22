@@ -1,0 +1,81 @@
+<div class="col-xs-1" align="center">
+    <form name="myForm" [formGroup]="angForm" (ngSubmit)="register(angForm)" autocomplete="off">
+        <br> <br> <br>
+        <h2>Register</h2>
+        <br>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td><label>Email</label><input type="text" formControlName="email" class="form-control" />
+                        <div *ngIf="(f['email'].touched) && (f['email'].invalid)">
+                            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>First Name</label><input onkeypress="return /[a-z]/i.test(event.key)" ng-model="myInput"
+                            type="email" formControlName="first_name" class="form-control" />
+                        <div *ngIf="(f['first_name'].touched) && (f['first_name'].invalid)">
+                            <div *ngIf="f['first_name'].errors && f['first_name'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                        <p>*You can enter letters only</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Last Name</label><input onkeypress="return /[a-z]/i.test(event.key)" type="text"
+                            formControlName="last_name" class="form-control" />
+                        <div *ngIf="(f['last_name'].touched) && (f['last_name'].invalid)">
+                            <div *ngIf="f['last_name'].errors && f['last_name'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                        <p>*You can enter letters only</p>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><label>Password</label> <input type="password" formControlName="password"
+                            class="form-control" />
+                        <div *ngIf="(f['password'].touched) && (f['password'].invalid)">
+                            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Confirm Password</label><input type="password" formControlName="password2"
+                            class="form-control" />
+                        <div *ngIf="(f['password2'].touched) && (f['password2'].invalid)">
+                            <div *ngIf="f['password2'].errors && f['password2'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="text-center">
+                        <input id="registerButton" class="btn btn-info " type="submit" value="Register" name="submit" />
+                        <br><br>
+                        <input id="loginButton" class="btn btn-link" type="submit" value="Login Instead" routerLink="/"
+                            routerLinkActive="active" ariaCurrentWhenActive="page" name="" />
+                    </td>
+
+
+            </tbody>
+        </table>
+    </form>
+
+</div>

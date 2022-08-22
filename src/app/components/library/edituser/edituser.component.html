@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="col-xs-1" align="center">
+    <br><br><br><br> <br>
+    <form [formGroup]="editForm" (ngSubmit)="editUser(editForm)" autocomplete="off">
+        <h2>Edit Profile
+        </h2>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td><label>First Name</label><input type="text" formControlName="first_name" class="form-control" />
+                        <div *ngIf="(f['first_name'].touched) && (f['first_name'].invalid)">
+                            <div *ngIf="f['first_name'].errors && f['first_name'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Last Name</label> <input type="text" formControlName="last_name" class="form-control" />
+                        <div *ngIf="(f['last_name'].touched) && (f['last_name'].invalid)">
+                            <div *ngIf="f['last_name'].errors && f['last_name'].errors['required']">
+                                <p style="color:red">This field is invalid</p>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">
+                        <input id="loginButton" type="submit" class="btn btn-info " value="  Save  "
+                            name="submit" /><br><br>
+
+                    </td>
+
+
+            </tbody>
+        </table>
+    </form>
+</div>

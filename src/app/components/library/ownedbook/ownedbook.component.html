@@ -1,0 +1,34 @@
+<table class="table ">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let books of book">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ books.title }}</td>
+            <td>{{ books.author }}</td>
+            <td>{{ books.type }}</td>
+            <td>{{ books.location }}</td>
+            <td>{{ books.status }}</td>
+            <td><input class="btn btn-info" type="button" value="Edit Book" routerLink="EditBook/{{ books.id }}"
+                    routerLinkActive="active" ariaCurrentWhenActive="page" style="margin:5px" name="" />
+                <input class="btn btn-info" type="button" value="Delete Book" routerLink="DeleteBook/{{ books.id }}"
+                    routerLinkActive="active" ariaCurrentWhenActive="page" name="" />
+            </td>
+
+        </tr>
+    </tbody>
+</table>

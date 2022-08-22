@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="column" align="center">
+    <div class="col-xl-4 col-sm-6 cursor-pointer">
+        <div class="card h-90">
+            <div class="card-body">
+
+                <h5 class="font-size-15">Email: {{ profile.email }}</h5>
+                <h5 class="font-size-15">Name: {{ profile.first_name }} {{ profile.last_name }}</h5>
+                <input style="margin:5px" id="registerButton" class="btn btn-info " type="submit" value="Edit Profile"
+                    routerLink="/edit" routerLinkActive="active" ariaCurrentWhenActive="page" name="" />
+
+                <input id="registerButton" class="btn btn-info " type="submit" value="Add Book" routerLink="/AddBook"
+                    routerLinkActive="active" ariaCurrentWhenActive="page" name="" />
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<h3 align="center"><b>Owned Books</b></h3>
+<app-ownedbook></app-ownedbook>
+<br><br><br>
+<h3 align="center"><b>Borrowed Books</b></h3>
+<app-userborrowbook></app-userborrowbook>

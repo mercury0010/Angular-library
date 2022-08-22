@@ -1,0 +1,32 @@
+<table class="table ">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Book</th>
+            <th>Check-out Date</th>
+            <th>Return Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bookborroweds of bookborrowed">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ bookborroweds.books }}</td>
+            <td>{{ bookborroweds.checkOutDate }}</td>
+            <td>{{ bookborroweds.returnedDate }}</td>
+
+            <td>
+                <input class="btn btn-info" type="button" value="Return Book"
+                    routerLink="returnBorrowed/{{ bookborroweds.books }}/{{ bookborroweds.id }}"
+                    routerLinkActive="active" ariaCurrentWhenActive="page" name="" />
+            </td>
+
+        </tr>
+    </tbody>
+</table>
